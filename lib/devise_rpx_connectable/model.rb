@@ -40,6 +40,7 @@ module Devise #:nodoc:
 
         # Only populate +email+ field if it's available (e.g. if +authenticable+ module is used).
         self.email = attributes[:email] || '' if self.respond_to?(:email)
+        self.name = attributes[:name] || '' if self.respond_to?(:name)
 
         # Populate optional request fields
         attributes[:request_keys].each do |k, v|
